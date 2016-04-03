@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>IOS 视图层级结构 | Jun.Zi Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="任何应用都有一个UIWindow对象，UIWindow包含应用中的所有视图。应用在启动时将创建并设置UIWindow对象，并添加其他视图。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IOS 视图层级结构">
+<meta property="og:url" content="http://yoursite.com/2015/05/01/ios-view/index.html">
+<meta property="og:site_name" content="Jun.Zi Home">
+<meta property="og:description" content="任何应用都有一个UIWindow对象，UIWindow包含应用中的所有视图。应用在启动时将创建并设置UIWindow对象，并添加其他视图。">
+<meta property="og:updated_time" content="2016-04-03T15:01:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IOS 视图层级结构">
+<meta name="twitter:description" content="任何应用都有一个UIWindow对象，UIWindow包含应用中的所有视图。应用在启动时将创建并设置UIWindow对象，并添加其他视图。">
+  
+    <link rel="alternative" href="/atom.xml" title="Jun.Zi Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jun.Zi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一花一世界</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔/">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">吃货一枚，只想静静地看着这个世界...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Jun.Zi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jun.Zi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一花一世界</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔/">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-ios-view" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/01/ios-view/" class="article-date">
+  	<time datetime="2015-04-30T16:00:00.000Z" itemprop="datePublished">2015-05-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IOS 视图层级结构
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>UIWindow</p>
+</blockquote>
+<p>任何应用都有一个UIWindow对象，UIWindow包含应用中的所有视图。应用在启动时将创建并设置UIWindow对象，并添加其他视图。</p>
+<p>加入UIWindow的视图将成为其子视图，子视图又可继续包含其他视图成为其子视图，从而构成以UIWindow对象为根视图的视图层级结构。</p>
+<a id="more"></a>
+<p><br></p>
+<blockquote>
+<p>frame</p>
+</blockquote>
+<p>视图有个frame属性，保存视图的大小和相对于父视图的位置。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">CGRect</span> frame;</span><br></pre></td></tr></table></figure>
+<p>其中CGRect包含origin和size两个结构。</p>
+<p>origin：CGPoint结构，包含两个float类型成员:x, y。</p>
+<p>size： CGSize结构，包含两个float类型成员:width, height。</p>
+<p><br></p>
+<blockquote>
+<p>bounds</p>
+</blockquote>
+<p>除了frame属性外，视图还定义了bounds属性。bounds属性表示参考的是视图自己的坐标系，而不是其父视图的坐标系。</p>
+<p><br></p>
+<blockquote>
+<p>加入视图层级</p>
+</blockquote>
+<p>在AppDelegate.m中的application:didFinishLaunchingWithOptions:方法中：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">CGRect</span> myFrame = <span class="built_in">CGRectMake</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">120</span>);</span><br><span class="line">MyView *myView = [[MyView alloc] initWithFrame:myFrame];</span><br><span class="line">[<span class="keyword">self</span>.window addSubview:myView];</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<blockquote>
+<p>视图控制器</p>
+</blockquote>
+<p>视图控制器一般继承自UIViewController类。因此继承了此类的一个重要属性：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIView</span> *view;</span><br></pre></td></tr></table></figure>
+<p>视图控制器可以管理一个视图层级结构，而view就是这个层级结构的根视图。</p>
+<p>视图控制器在创建出来的那一刻不会马上就载入其相应的视图。而是采用延迟加载机制，只有当应用用到某个视图时才会创建。该做法能提高内存使用效率。</p>
+<p><strong>视图控制器通过两种方式创建视图层级结构：</strong></p>
+<ul>
+<li>loadView方法</li>
+<li>NIB文件</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>设置根视图控制器</p>
+</blockquote>
+<p>当某个视图控制器设置为UIWindow对象的根视图控制器时， UIWindow对象会将该视图控制器的view作为子视图加入UIWindow。并自动调整view的大小，将其设置为与窗口一样的大小。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MyViewController *mvc = [[MyViewController alloc] init];</span><br><span class="line"><span class="keyword">self</span>.window.rootViewController = mvc;</span><br></pre></td></tr></table></figure>
+<p><strong>setRootViewController: 示例代码如下：</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setRootViewController:(<span class="built_in">UIViewController</span> *)viewController &#123;</span><br><span class="line">   </span><br><span class="line">  <span class="built_in">UIView</span> *rootView = viewController.view;</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">CGRect</span> viewFrame = <span class="keyword">self</span>.bounds;</span><br><span class="line">  rootView.frame = viewFrame;</span><br><span class="line"> </span><br><span class="line">  [<span class="keyword">self</span> addSubview:rootView];</span><br><span class="line"> </span><br><span class="line">  _rootViewController = viewController;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/05/javaweb-illegalstateexception/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Java Web Cannot forward after response has been committed
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/08/java-iostream/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 字节流</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ios-view" data-title="IOS 视图层级结构" data-url="http://yoursite.com/2015/05/01/ios-view/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"yanjun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jun.Zi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

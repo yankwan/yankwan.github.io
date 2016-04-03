@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>字节对齐 | Jun.Zi Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由于计算机处理内存中数据的时候是按字长读取处理的，32位机器按4字长读取，64位机器按8字长读取。为了提高处理效率，系统将会采取字节对齐的方式进行相应的运算。所以在计算结构体大小时，sizeof(struct)所求的的值并不是将结构体中相应变量的字节简单相加。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字节对齐">
+<meta property="og:url" content="http://yoursite.com/2015/02/20/byte-aling/index.html">
+<meta property="og:site_name" content="Jun.Zi Home">
+<meta property="og:description" content="由于计算机处理内存中数据的时候是按字长读取处理的，32位机器按4字长读取，64位机器按8字长读取。为了提高处理效率，系统将会采取字节对齐的方式进行相应的运算。所以在计算结构体大小时，sizeof(struct)所求的的值并不是将结构体中相应变量的字节简单相加。">
+<meta property="og:updated_time" content="2016-04-03T14:55:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字节对齐">
+<meta name="twitter:description" content="由于计算机处理内存中数据的时候是按字长读取处理的，32位机器按4字长读取，64位机器按8字长读取。为了提高处理效率，系统将会采取字节对齐的方式进行相应的运算。所以在计算结构体大小时，sizeof(struct)所求的的值并不是将结构体中相应变量的字节简单相加。">
+  
+    <link rel="alternative" href="/atom.xml" title="Jun.Zi Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jun.Zi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一花一世界</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔/">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">吃货一枚，只想静静地看着这个世界...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Jun.Zi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jun.Zi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一花一世界</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔/">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-byte-aling" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/20/byte-aling/" class="article-date">
+  	<time datetime="2015-02-19T16:00:00.000Z" itemprop="datePublished">2015-02-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      字节对齐
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于计算机处理内存中数据的时候是按字长读取处理的，32位机器按4字长读取，64位机器按8字长读取。为了提高处理效率，系统将会采取字节对齐的方式进行相应的运算。所以在计算结构体大小时，sizeof(struct)所求的的值并不是将结构体中相应变量的字节简单相加。</p>
+<a id="more"></a>
+<p>假设有以下变量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a;</span><br><span class="line"><span class="keyword">int</span> b;</span><br></pre></td></tr></table></figure>
+<p>若不按字节对齐处理，其存储方式如下图所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">|<span class="keyword">char</span>|--------<span class="keyword">int</span>--------|</span><br><span class="line"> <span class="number">0</span>    <span class="number">1</span>              <span class="number">4</span>    <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p><strong>计算机读取字符变量a</strong>：将0x00–0x03共32位读入寄存器，此时不仅读取了变量a，也读取了部分变量b，因此通过必须通过相应位运算获取变量a。通过左移24位清除变量b的位，再右移24位将变量a移回低位。（大端法表示）</p>
+<p><strong>计算机读取字符变量b</strong>：先将0x00–0x03共32位读入寄存器，通过位运算获取变量b的低24位部分。再将0x04–0x07共32位读入寄存器，通过位运算获取变量b的高8位，最后将两部分做位或运算获得变量b的值。</p>
+<p>可以看到，若处理的数据不能一个字节读取完，则要进行比较复杂的位运算及合并操作，影响效率。为了提高系统的处理效率，在浪费可接受的空间的前提下，采用字节对齐的方法，可以简化对数据的处理。这也是一种以空间换时间的策略。</p>
+<p>字节对齐存储方式如下图所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|<span class="keyword">char</span>|----|----|----|</span><br><span class="line">|--------<span class="keyword">int</span>--------|</span><br><span class="line"> <span class="number">0</span>    <span class="number">1</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="相关例子"><a href="#相关例子" class="headerlink" title="相关例子"></a>相关例子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> people &#123;</span><br><span class="line">   <span class="keyword">char</span> name[<span class="number">5</span>]; </span><br><span class="line">   <span class="keyword">int</span> age; </span><br><span class="line">   <span class="keyword">short</span> gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此结构体有3个变量，共（5+4+2）共11个字节，但系统默认会采用字节对齐策略，采用如下存储方式进行存储。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="keyword">char</span>|<span class="keyword">char</span>|<span class="keyword">char</span>|<span class="keyword">char</span>|</span><br><span class="line">|<span class="keyword">char</span>|----|----|----|</span><br><span class="line">|--------<span class="keyword">int</span>--------|</span><br><span class="line">|--<span class="keyword">short</span>--|---------|</span><br></pre></td></tr></table></figure>
+<p>所以sizeof(people) = 16 而不是11。</p>
+<p>若考虑结构体中申明变量的不同顺序，调整变量顺序如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> people &#123;</span><br><span class="line">   <span class="keyword">int</span> age;</span><br><span class="line">   <span class="keyword">char</span> name[<span class="number">5</span>]; </span><br><span class="line">   <span class="keyword">short</span> gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时结构体的存储情况将如下图所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|--------<span class="keyword">int</span>--------|</span><br><span class="line">|<span class="keyword">char</span>|<span class="keyword">char</span>|<span class="keyword">char</span>|<span class="keyword">char</span>|</span><br><span class="line">|<span class="keyword">char</span>|----|--<span class="keyword">short</span>--|</span><br></pre></td></tr></table></figure>
+<p>此时sizeof(people) = 12。很明显，在该顺序下存储空间利用率更高，浪费的空间更少。</p>
+<p><br></p>
+<h3 id="计算原则"><a href="#计算原则" class="headerlink" title="计算原则"></a>计算原则</h3><p>例1</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> A &#123;</span><br><span class="line">   <span class="keyword">int</span> a;</span><br><span class="line">   <span class="keyword">char</span> b[<span class="number">5</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结构体A中最长字节为int型变量，为4个Byte。两者共(4+5) = 9 Byte。以最长字节4为基准，取大于总字节长9的倍数：3 x 4 = 12。因此sizeof(A) = 12。</p>
+<p>例2</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> B &#123;</span><br><span class="line">   <span class="keyword">char</span> a;</span><br><span class="line">   <span class="keyword">int</span> b;</span><br><span class="line">   <span class="keyword">double</span> c;</span><br><span class="line">   <span class="keyword">short</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结构体B中最长字节为double型变量，为8个字节。以最长变量类型为界限分为两部分。<br><br>第一部分：(1+4+8) = 13。 以字节8为基准，取大于13的倍数：2 x 8 = 16。<br><br>第二部分：short型字节长度为2。 取大于2的倍数： 1 x 8 = 8。<br><br>两者相加即为该结构体大小，因此sizeof(B) = 24。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/01/empty-template/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Xcode6 创建空白应用模板
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/01/android-camera/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android Camera</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="byte-aling" data-title="字节对齐" data-url="http://yoursite.com/2015/02/20/byte-aling/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"yanjun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jun.Zi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

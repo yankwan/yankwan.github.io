@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Android Camera | Jun.Zi Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android 调用Camera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Camera">
+<meta property="og:url" content="http://yoursite.com/2015/02/01/android-camera/index.html">
+<meta property="og:site_name" content="Jun.Zi Home">
+<meta property="og:description" content="Android 调用Camera">
+<meta property="og:updated_time" content="2016-04-03T14:52:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Camera">
+<meta name="twitter:description" content="Android 调用Camera">
+  
+    <link rel="alternative" href="/atom.xml" title="Jun.Zi Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jun.Zi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一花一世界</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔/">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">吃货一枚，只想静静地看着这个世界...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Jun.Zi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jun.Zi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一花一世界</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔/">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-android-camera" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/01/android-camera/" class="article-date">
+  	<time datetime="2015-01-31T16:00:00.000Z" itemprop="datePublished">2015-02-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android Camera
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参照Android官网，Android官网提供了较为详细的相机调用方法。对相机的调用可以通过一个简单的调用，即调用本身相机的应用进行拍照</p>
+<a id="more"></a>
+<p><strong>申明拍照权限</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest ... &gt;</span><br><span class="line">   &lt;uses-feature android:name="android.hardware.camera"</span><br><span class="line">                  android:required="true" /&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+<p><br><br><strong>调用相机进行拍照</strong></p>
+<p>对相机的调用可以通过调用 Intent 来启动相机的Activity，代码实现如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> REQUEST_IMAGE_CAPTURE = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dispatchTakePictureIntent</span><span class="params">()</span> </span>&#123; </span><br><span class="line">   Intent takePictureIntent = <span class="keyword">new</span> Intent(MediaStore.ACTION_IMAGE_CAPTURE);</span><br><span class="line">   <span class="keyword">if</span> (takePictureIntent.resolveActivity(getPackageManager()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">      startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中 ACTION_IMAGE_CAPTURE 是调用相机进行拍照的标准 Intent action。</p>
+<p>另外官网中给出的代码将 startActivityForResult( ) 放在 if 代码块中，判断条件resolveActivity（ ）的作用是防止 Intent 调用的 action （即设备不存在相机）不存在造成应用崩溃。</p>
+<p><br><br><strong>获取缩略图</strong></p>
+<p>可通过 onActivityResult( ) 的 getExtras( ) 获取 Bundle，并通过关键字”data”获取 Bitmap 格式的图像。但通过该 “data” 获取的缩略图像比较适用于 icon，但对于需要较大的图像，则要通过取得全尺寸的方式来获取。</p>
+<p>获取缩略图代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span> </span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (requestCode == REQUEST_IMAGE_CAPTURE &amp;&amp; resultCode == RESULT_OK) &#123;</span><br><span class="line">      Bundle extras = data.getExtras();</span><br><span class="line">      Bitmap imageBitmap = (Bitmap) extras.get(<span class="string">"data"</span>);</span><br><span class="line">      mImageView.setImageBitmap(imageBitmap);</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br><strong>保存全尺寸图片</strong></p>
+<p>Android将通过文件的方式保存全尺寸的图片。通常来说，相机拍摄的照片一般保存在公共的外存上（外存：external storage，不仅仅是指存储卡，也是指手机运行内存以外的存储空间），以方便其他应用进行访问。</p>
+<p>比较合适的存放图片的文件目录由 <strong>getExternalStoragePublicDirectory( )</strong> 提供，其中带有 <em>DIRECTORY_PICTURES</em> 参数。因为该方法提供的目录是共享给任何其他应用的，所以读写该共享图片需要分别设置 <em>READ_EXTERNAL_STORAGE</em> 和 <em>WRITE_EXTERNAL_STORAGE</em> 权限。</p>
+<p>设置写的权限的同时也运行读的操作，所以只要设置写的权限即可：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest ...&gt;</span><br><span class="line">    &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+<p>如果希望图片是私有的，只能让自己的应用读取的话，可以用 getExternalFilesDir( ) 方法来代替。在 Android 4.3 或以下版本，对该目录的写操作需要申明权限 WRITE_EXTERNAL_STORAGE。但从Android4.4开始，不用再指明权限，因为其他应用是无法访问该目录的，所以该权限只需要在较低版本中设置即可：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest ...&gt;</span><br><span class="line">    &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"</span><br><span class="line">                     android:maxSdkVersion="18" /&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：保存到 getExternalFilesDir( ) 目录下的图片会随应用的删除而删除。</p>
+<p><br><br>一旦确定了文件的目录，必须为要保存的图片取个不相互冲突的命名。下面的例子将通过 date-time stamp 为图片生成独一的文件名。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">String mCurrentPhotoPath;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> File <span class="title">createImageFile</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">   <span class="comment">// Create an image file name </span></span><br><span class="line">   String timeStamp = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyyMMdd_HHmmss"</span>).format(<span class="keyword">new</span> Date());</span><br><span class="line">   String imageFileName = <span class="string">"JPEG_"</span> + timeStamp + <span class="string">"_"</span>;</span><br><span class="line">   File storageDir = Environment.getExternalStoragePublicDirectory(</span><br><span class="line">           Environment.DIRECTORY_PICTURES);</span><br><span class="line">   File image = File.createTempFile(</span><br><span class="line">       imageFileName,  <span class="comment">/* prefix */</span></span><br><span class="line">       <span class="string">".jpg"</span>,         <span class="comment">/* suffix */</span> </span><br><span class="line">       storageDir      <span class="comment">/* directory */</span></span><br><span class="line">   ); </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Save a file: path for use with ACTION_VIEW intents </span></span><br><span class="line">   mCurrentPhotoPath = <span class="string">"file:"</span> + image.getAbsolutePath();</span><br><span class="line">   <span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过上述方法为图片创建了 File 类型后，现在可以创建并调用 Intent 如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> REQUEST_TAKE_PHOTO = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dispatchTakePictureIntent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Intent takePictureIntent = <span class="keyword">new</span> Intent(MediaStore.ACTION_IMAGE_CAPTURE);</span><br><span class="line">    <span class="comment">// Ensure that there's a camera activity to handle the intent</span></span><br><span class="line">    <span class="keyword">if</span> (takePictureIntent.resolveActivity(getPackageManager()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// Create the File where the photo should go</span></span><br><span class="line">        File photoFile = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            photoFile = createImageFile();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException ex) &#123;</span><br><span class="line">            <span class="comment">// Error occurred while creating the File</span></span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Continue only if the File was successfully created</span></span><br><span class="line">        <span class="keyword">if</span> (photoFile != <span class="keyword">null</span>) &#123;</span><br><span class="line">            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,</span><br><span class="line">                    Uri.fromFile(photoFile));</span><br><span class="line">            startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br><strong>添加至图片库</strong></p>
+<p>对保存的图片可以在手机图片库（Gallery）中显示，如果是通过 getExternalFilesDir( ) 方法保存，系统将不能访问并显示在图片库中，因为是私有的。</p>
+<p>下面的例子展示了如何通过调用手机多媒体添加图片到 Media Provider的数据库，使得Android Gallery 和其他应用均能调用它。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">galleryAddPic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Intent mediaScanIntent = <span class="keyword">new</span> Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);</span><br><span class="line">    File f = <span class="keyword">new</span> File(mCurrentPhotoPath);</span><br><span class="line">    Uri contentUri = Uri.fromFile(f);</span><br><span class="line">    mediaScanIntent.setData(contentUri);</span><br><span class="line">    <span class="keyword">this</span>.sendBroadcast(mediaScanIntent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br><strong>解码缩放图像</strong></p>
+<p>全尺寸的图像对于内存消耗比较大，几张图片就可能很快消耗掉内存。因此可以通过缩放图像尺寸至合适大小来减少内存消耗。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setPic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Get the dimensions of the View</span></span><br><span class="line">    <span class="keyword">int</span> targetW = mImageView.getWidth();</span><br><span class="line">    <span class="keyword">int</span> targetH = mImageView.getHeight();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get the dimensions of the bitmap</span></span><br><span class="line">    BitmapFactory.Options bmOptions = <span class="keyword">new</span> BitmapFactory.Options();</span><br><span class="line">    bmOptions.inJustDecodeBounds = <span class="keyword">true</span>;</span><br><span class="line">    BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);</span><br><span class="line">    <span class="keyword">int</span> photoW = bmOptions.outWidth;</span><br><span class="line">    <span class="keyword">int</span> photoH = bmOptions.outHeight;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine how much to scale down the image</span></span><br><span class="line">    <span class="keyword">int</span> scaleFactor = Math.min(photoW/targetW, photoH/targetH);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Decode the image file into a Bitmap sized to fill the View</span></span><br><span class="line">    bmOptions.inJustDecodeBounds = <span class="keyword">false</span>;</span><br><span class="line">    bmOptions.inSampleSize = scaleFactor;</span><br><span class="line">    bmOptions.inPurgeable = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);</span><br><span class="line">    mImageView.setImageBitmap(bitmap);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/20/byte-aling/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          字节对齐
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/20/handler-source/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Handler 源码浅析</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="android-camera" data-title="Android Camera" data-url="http://yoursite.com/2015/02/01/android-camera/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"yanjun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jun.Zi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

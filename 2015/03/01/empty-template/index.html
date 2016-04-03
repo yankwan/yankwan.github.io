@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016 | Jun.Zi Home</title>
+  <title>Xcode6 创建空白应用模板 | Jun.Zi Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jun.Zi Home">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="Xcode6 创建空白应用模板">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode6 创建空白应用模板">
+<meta property="og:url" content="http://yoursite.com/2015/03/01/empty-template/index.html">
 <meta property="og:site_name" content="Jun.Zi Home">
-<meta property="og:description" content="技术博客">
+<meta property="og:description" content="Xcode6 创建空白应用模板">
+<meta property="og:updated_time" content="2016-04-03T15:01:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jun.Zi Home">
-<meta name="twitter:description" content="技术博客">
+<meta name="twitter:title" content="Xcode6 创建空白应用模板">
+<meta name="twitter:description" content="Xcode6 创建空白应用模板">
   
     <link rel="alternative" href="/atom.xml" title="Jun.Zi Home" type="application/atom+xml">
   
@@ -179,53 +180,106 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-empty-template" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/29/mac-iterm2-color/" class="archive-article-date">
-  	<time datetime="2016-03-28T16:00:00.000Z" itemprop="datePublished">Mar 29</time>
+    <div class="article-meta">
+      <a href="/2015/03/01/empty-template/" class="article-date">
+  	<time datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">2015-03-01</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/29/mac-iterm2-color/">Mac iTerm2 配色方案</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Xcode6 创建空白应用模板
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>首先选择 “Single View Application” 模板。</li>
+<li>创建项目后删除 Main.storyboard, ViewController.h, ViewController.m 文件</li>
+<li>点击项目名，在 General 面板下的 Deployment Info 分类下，删除 Main Interface 中的内容。</li>
+<li>打开 AppDelegate.m, 在 application:didFinishLaunchingWithOptions: 方法中添加以下缺失的代码。</li>
+</ol>
+<a id="more"></a>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[[<span class="built_in">UIScreen</span> mainScreen] bounds]];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span>.window.backgroundColor = [<span class="built_in">UIColor</span> whiteColor];</span><br><span class="line">    [<span class="keyword">self</span>.window makeKeyAndVisible];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/08/java-iostream/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Java 字节流
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/20/byte-aling/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字节对齐</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="empty-template" data-title="Xcode6 创建空白应用模板" data-url="http://yoursite.com/2015/03/01/empty-template/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"yanjun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -251,8 +305,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false

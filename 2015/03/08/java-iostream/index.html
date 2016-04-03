@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Java 字节流 | Jun.Zi Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="字节流是指基本单位是一个字节的信息系列。信息在计算机中都是以8位二进制——即一个字节来处理，所以可以将各种信息用字节流统一处理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 字节流">
+<meta property="og:url" content="http://yoursite.com/2015/03/08/java-iostream/index.html">
+<meta property="og:site_name" content="Jun.Zi Home">
+<meta property="og:description" content="字节流是指基本单位是一个字节的信息系列。信息在计算机中都是以8位二进制——即一个字节来处理，所以可以将各种信息用字节流统一处理。">
+<meta property="og:updated_time" content="2016-04-03T14:49:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 字节流">
+<meta name="twitter:description" content="字节流是指基本单位是一个字节的信息系列。信息在计算机中都是以8位二进制——即一个字节来处理，所以可以将各种信息用字节流统一处理。">
+  
+    <link rel="alternative" href="/atom.xml" title="Jun.Zi Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jun.Zi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一花一世界</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔/">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">吃货一枚，只想静静地看着这个世界...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Jun.Zi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.juimg.com/tuku/yulantu/131112/328663-13111216303446.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jun.Zi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一花一世界</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔/">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yankwan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/yanjleau/home" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-java-iostream" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/03/08/java-iostream/" class="article-date">
+  	<time datetime="2015-03-08T03:07:16.000Z" itemprop="datePublished">2015-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java 字节流
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a><strong>字节流</strong></h4><p>字节流是指基本单位是一个字节的信息系列。信息在计算机中都是以8位二进制————即一个字节来处理，所以可以将各种信息用字节流统一处理。</p>
+<p>按照基本数据类型读写：<strong>DataInputStream</strong> 和 <strong>DataOutputStream</strong>。这两个类属于过滤流。将基本字节输入输出流自动转换成基本数据类型进行读写。</p>
+<a id="more"></a>
+<p><br><br><strong>输出流：</strong></p>
+<p>数据 ———&gt; DataOutputStream(往输入流中写入Java基本数据类型) ———&gt; BufferedOutputStream(提供数据写入到缓冲区功能) ———&gt; FileOutputStream(将数据写入到文件上) ———&gt; 文件</p>
+<p><br><br><strong>输入流：</strong></p>
+<p>文件 ———&gt; FileInputStream(从文件中获取输入字节) ———&gt; BufferedInputStream(增加缓冲功能) ———&gt; DataInputStream(增加读取Java基本数据类型功能) ———&gt; 数据</p>
+<p><br></p>
+<h5 id="ByteArrayOutputStream与ByteArrayInputStream"><a href="#ByteArrayOutputStream与ByteArrayInputStream" class="headerlink" title="ByteArrayOutputStream与ByteArrayInputStream"></a><strong>ByteArrayOutputStream与ByteArrayInputStream</strong></h5><p><strong>ByteArrayOutputStream:</strong> 在创建实例时，程序内部创建一个byte[]数组的缓冲区，然后利用ByteArrayOutputStream的实例向数组中写入或读出byte型数据。</p>
+<p>网络传输中需要传输很多变量，可以利用ByteArrayOutput先收集所有的变量，在一次性把数据发出去。</p>
+<p><strong>ByteArrayInputStream:</strong> 将字节数组转化为输入流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">2</span>; </span><br><span class="line">    ByteArrayOutputStream bout = <span class="keyword">new</span> ByteArrayOutputStream(); </span><br><span class="line">    bout.write(a); </span><br><span class="line">    bout.write(b); </span><br><span class="line">    bout.write(c); </span><br><span class="line">    <span class="keyword">byte</span>[] buff = bout.toByteArray(); </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ByteArrayOutputStream把内存中的数据读到字节数组中</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; buff.length; i++) </span><br><span class="line">        System.out.println(buff[i]); </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ByteArrayInputStream把字节数组中的字节以流的形式读出</span></span><br><span class="line">    ByteArrayInputStream bin = <span class="keyword">new</span> ByteArrayInputStream(buff); </span><br><span class="line">    <span class="keyword">while</span> ((b = bin.read()) != -<span class="number">1</span>) &#123; </span><br><span class="line">        System.out.println(b); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br>结合DataInputStream与DataOutputStream过滤流对基本数据类型进行读写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123; </span><br><span class="line">    ByteArrayOutputStream bout = <span class="keyword">new</span> ByteArrayOutputStream(); </span><br><span class="line">    DataOutputStream dout = <span class="keyword">new</span> DataOutputStream(bout); </span><br><span class="line">    String str = <span class="string">"DataOut"</span>; </span><br><span class="line">    <span class="keyword">int</span> size = <span class="number">4</span>; </span><br><span class="line">    dout.writeUTF(str); </span><br><span class="line">    dout.writeInt(size); </span><br><span class="line">    <span class="keyword">byte</span>[] buff = bout.toByteArray(); </span><br><span class="line">    </span><br><span class="line">    ByteArrayInputStream bin = <span class="keyword">new</span> ByteArrayInputStream(buff); </span><br><span class="line">    DataInputStream dis = <span class="keyword">new</span> DataInputStream(bin); </span><br><span class="line">    String theStr = dis.readUTF(); </span><br><span class="line">    <span class="keyword">int</span> theSize = dis.readInt(); </span><br><span class="line">    System.out.println(theStr + <span class="string">":"</span> + theSize); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="网络连接"><a href="#网络连接" class="headerlink" title="网络连接"></a><strong>网络连接</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">byte</span>[] getUrlBytes(String urlSpec) <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    URL url = <span class="keyword">new</span> URL(urlSpec);</span><br><span class="line">    HttpURLConnection connection = (HttpURLConnection) url.openConnection();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        ByteArrayOutputStream out = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">        <span class="comment">// 从连接中获取输入流</span></span><br><span class="line">        InputStream in = connection.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (connection.getResponseCode() != HttpURLConnection.HTTP_OK) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> bytesRead = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="comment">// 循环从输入流中读取字节数组</span></span><br><span class="line">        <span class="keyword">while</span> ((bytesRead = in.read(buffer)) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            out.write(buffer, <span class="number">0</span>, bytesRead);</span><br><span class="line">        &#125;</span><br><span class="line">        out.close();</span><br><span class="line">        <span class="keyword">return</span> out.toByteArray();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        connection.disconnect();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUrl</span><span class="params">(String urlSpec)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    System.out.println(<span class="keyword">new</span> String(getUrlBytes(urlSpec)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">new</span> IOTest().getUrl(<span class="string">"http://www.baidu.com"</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">      <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">      e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>while循环中，输入流in的read(byte[] b)方法，将读取的字节存放在buffer数组中，并返回读取的字节数，若读取完则返回-1。</p>
+<p>过滤流ByteArrayOutputStream的write(byte[] b, int off, int len)方法, 读取字节数组b中从off开始，长度为len的字节到输出流out中。</p>
+<p>out的toByteArray(), 将返回一个保存输出流中全部数据的字节数组。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/01/ios-view/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          IOS 视图层级结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/01/empty-template/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Xcode6 创建空白应用模板</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="java-iostream" data-title="Java 字节流" data-url="http://yoursite.com/2015/03/08/java-iostream/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"yanjun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jun.Zi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
